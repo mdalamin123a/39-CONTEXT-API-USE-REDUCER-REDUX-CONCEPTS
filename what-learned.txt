@@ -1,0 +1,39 @@
+C1. context api is used to pass data to multi level child component without props.
+2. createContext() method is used to create context. is is used to the main 
+    parent component. we need to {} import it from react. we need to use 
+    createContext() outside of component method. we need to export this 
+    context to read the context data.
+    ==> 
+        import {createContext} from 'react';
+
+        export const CategoryContext = createContext();
+        function App(){}
+
+3. All the child component of main component where the context is created. 
+    they are wrapped by Provider Component of Context. and passed the data on 
+    props named value.
+    ==>
+        function App(){
+            return(
+                <CategoryContext.Provider value={'laptop'}>
+                    <Header />
+                    <Home />
+                    <Shipment />
+                </CategoryContext.Provider>
+            );
+        }
+
+4. useContext() hook is used to read the context data from a child component. the arg is the Context.
+    we need to import useContext from 'react'
+    ==>
+        import {useContext} from 'react';
+        import {CategoryContext} from '../../App';
+
+        function CategoryDetail(){
+            const category = useContext(CategoryContext);
+            return (
+                <div>
+                    <h1>Selected Category: {category}</h1>
+                </div>
+            );
+        }
