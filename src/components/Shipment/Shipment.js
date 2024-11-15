@@ -3,7 +3,6 @@ import { CategoryContext } from '../../App';
 
 const Shipment = () => {
     const [category, setCategory] = useContext(CategoryContext);
-    console.log(setCategory);
     return (
         <div>
             <h1>This is Shipment</h1>

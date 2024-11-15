@@ -5,7 +5,7 @@ import { CategoryContext } from '../../App';
 const Home = () => {
     const category = useContext(CategoryContext);
     return (
-        <div style={{border: '1px solid purple'}}>
+        <div style={{border: '1px solid purple'}} >
             <h1>This is Home: {category}</h1>
             <Categories/>
         </div>
